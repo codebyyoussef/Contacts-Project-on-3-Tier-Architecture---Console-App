@@ -32,6 +32,7 @@ This is a console-based Contacts Management application built using **3-Tier Arc
 ## How to Use
 1. Clone the repository: git clone <repository-url>
 2. Restore the database:
+3. 
 If you’re using **SQL Server Management Studio (SSMS)**, you can restore the database in two ways:  
 ### Option 1: Using SSMS (GUI)
 1. Open SSMS and connect to your SQL Server instance.  
@@ -47,6 +48,11 @@ Alternatively, you can restore the database directly using a SQL command:
 ```sql
 RESTORE DATABASE ContactsDB
 FROM DISK = 'C:\Path\To\ContactsDB.bak';
+WITH REPLACE;
+
+### ⚠️ Note:
+- Replace the path above with the actual file path where your ContactsDB.bak is located.
+- Ensure your SQL Server service account has permission to access that file location.
 
 ## Technologies Used
 - Programming Language: C#
