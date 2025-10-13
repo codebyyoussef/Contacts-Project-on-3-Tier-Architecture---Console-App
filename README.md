@@ -46,6 +46,7 @@ If you’re using **SQL Server Management Studio (SSMS)**, you can restore the d
 Alternatively, you can restore the database directly using a SQL command:  
 RESTORE DATABASE ContactsDB
 FROM DISK = 'C:\Path\To\ContactsDB.bak';
+```
 
 ### ⚠️ Note:
 - Replace the path above with the actual file path where your ContactsDB.bak is located.
