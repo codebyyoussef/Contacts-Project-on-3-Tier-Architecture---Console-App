@@ -7,3 +7,12 @@ C:\Users\SBS\Desktop\Programming Fundamentals course\18 - C# & Database Connecti
 C:\Users\SBS\Desktop\Programming Fundamentals course\18 - C# & Database Connectivity\Contacts Project on 3 Tier Architecture - Console App\ContactsBusinessLayer\obj\Debug\Contacts.DFB66D76.Up2Date
 C:\Users\SBS\Desktop\Programming Fundamentals course\18 - C# & Database Connectivity\Contacts Project on 3 Tier Architecture - Console App\ContactsBusinessLayer\obj\Debug\ContactsBusinessLayer.dll
 C:\Users\SBS\Desktop\Programming Fundamentals course\18 - C# & Database Connectivity\Contacts Project on 3 Tier Architecture - Console App\ContactsBusinessLayer\obj\Debug\ContactsBusinessLayer.pdb
+C:\Users\SBS\Desktop\Programming Fundamentals course\myProjects\Contacts-Project-on-3-Tier-Architecture---Console-App\ContactsBusinessLayer\bin\Debug\ContactsBusinessLayer.dll
+C:\Users\SBS\Desktop\Programming Fundamentals course\myProjects\Contacts-Project-on-3-Tier-Architecture---Console-App\ContactsBusinessLayer\bin\Debug\ContactsBusinessLayer.pdb
+C:\Users\SBS\Desktop\Programming Fundamentals course\myProjects\Contacts-Project-on-3-Tier-Architecture---Console-App\ContactsBusinessLayer\bin\Debug\ContactsDataAccessLayer.dll
+C:\Users\SBS\Desktop\Programming Fundamentals course\myProjects\Contacts-Project-on-3-Tier-Architecture---Console-App\ContactsBusinessLayer\bin\Debug\ContactsDataAccessLayer.pdb
+C:\Users\SBS\Desktop\Programming Fundamentals course\myProjects\Contacts-Project-on-3-Tier-Architecture---Console-App\ContactsBusinessLayer\obj\Debug\ContactsBusinessLayer.csproj.AssemblyReference.cache
+C:\Users\SBS\Desktop\Programming Fundamentals course\myProjects\Contacts-Project-on-3-Tier-Architecture---Console-App\ContactsBusinessLayer\obj\Debug\ContactsBusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\SBS\Desktop\Programming Fundamentals course\myProjects\Contacts-Project-on-3-Tier-Architecture---Console-App\ContactsBusinessLayer\obj\Debug\Contacts.DFB66D76.Up2Date
+C:\Users\SBS\Desktop\Programming Fundamentals course\myProjects\Contacts-Project-on-3-Tier-Architecture---Console-App\ContactsBusinessLayer\obj\Debug\ContactsBusinessLayer.dll
+C:\Users\SBS\Desktop\Programming Fundamentals course\myProjects\Contacts-Project-on-3-Tier-Architecture---Console-App\ContactsBusinessLayer\obj\Debug\ContactsBusinessLayer.pdb

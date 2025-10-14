@@ -6,19 +6,20 @@ namespace ContactsConsoleApp
 {
     internal class Program
     {
-        static void TestFindContacts(int ID)
+        static void FindContacts(int ID)
         {
             clsContact contact = clsContact.Find(ID);
 
             if (contact != null)
             {
-                Console.WriteLine(contact.FirstName + " " + contact.LastName);
-                Console.WriteLine(contact.Email);
-                Console.WriteLine(contact.Phone);
-                Console.WriteLine(contact.Address);
-                Console.WriteLine(contact.DateOfBirth);
-                Console.WriteLine(contact.CountryID);
-                Console.WriteLine(contact.ImagePath);
+                Console.WriteLine($"FirstName: {contact.FirstName}");
+                Console.WriteLine($"LastName: {contact.LastName}");
+                Console.WriteLine($"Email: {contact.Email}");
+                Console.WriteLine($"Phone: {contact.Phone}");
+                Console.WriteLine($"Address: {contact.Address}");
+                Console.WriteLine($"DateOfBirth: {contact.DateOfBirth}");
+                Console.WriteLine($"CountryID: {contact.CountryID}");
+                Console.WriteLine($"ImagePath: {contact.ImagePath}");
             }
             else
             {
@@ -28,7 +29,7 @@ namespace ContactsConsoleApp
 
         static void Main(string[] args)
         {
-            TestFindContacts(55);
+            FindContacts(1);
         }
     }
 }

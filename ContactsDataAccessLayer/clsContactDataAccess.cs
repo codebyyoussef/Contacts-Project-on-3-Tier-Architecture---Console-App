@@ -41,6 +41,7 @@ namespace ContactsDataAccessLayer
             catch (Exception ex)
             {
                 // You put code of logging errors
+                isFound = false;
             }
             finally
             {

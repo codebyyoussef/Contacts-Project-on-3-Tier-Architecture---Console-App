@@ -8,3 +8,16 @@ C:\Users\SBS\Desktop\Programming Fundamentals course\18 - C# & Database Connecti
 C:\Users\SBS\Desktop\Programming Fundamentals course\18 - C# & Database Connectivity\Contacts Project on 3 Tier Architecture - Console App\ContactsConsoleApp\obj\Debug\Contacts.BFD23B43.Up2Date
 C:\Users\SBS\Desktop\Programming Fundamentals course\18 - C# & Database Connectivity\Contacts Project on 3 Tier Architecture - Console App\ContactsConsoleApp\obj\Debug\ContactsConsoleApp.exe
 C:\Users\SBS\Desktop\Programming Fundamentals course\18 - C# & Database Connectivity\Contacts Project on 3 Tier Architecture - Console App\ContactsConsoleApp\obj\Debug\ContactsConsoleApp.pdb
+C:\Users\SBS\Desktop\Programming Fundamentals course\myProjects\Contacts-Project-on-3-Tier-Architecture---Console-App\ContactsConsoleApp\bin\Debug\ContactsConsoleApp.exe.config
+C:\Users\SBS\Desktop\Programming Fundamentals course\myProjects\Contacts-Project-on-3-Tier-Architecture---Console-App\ContactsConsoleApp\bin\Debug\ContactsConsoleApp.exe
+C:\Users\SBS\Desktop\Programming Fundamentals course\myProjects\Contacts-Project-on-3-Tier-Architecture---Console-App\ContactsConsoleApp\bin\Debug\ContactsConsoleApp.pdb
+C:\Users\SBS\Desktop\Programming Fundamentals course\myProjects\Contacts-Project-on-3-Tier-Architecture---Console-App\ContactsConsoleApp\bin\Debug\ContactsBusinessLayer.dll
+C:\Users\SBS\Desktop\Programming Fundamentals course\myProjects\Contacts-Project-on-3-Tier-Architecture---Console-App\ContactsConsoleApp\bin\Debug\ContactsDataAccessLayer.dll
+C:\Users\SBS\Desktop\Programming Fundamentals course\myProjects\Contacts-Project-on-3-Tier-Architecture---Console-App\ContactsConsoleApp\bin\Debug\ContactsBusinessLayer.pdb
+C:\Users\SBS\Desktop\Programming Fundamentals course\myProjects\Contacts-Project-on-3-Tier-Architecture---Console-App\ContactsConsoleApp\bin\Debug\ContactsDataAccessLayer.pdb
+C:\Users\SBS\Desktop\Programming Fundamentals course\myProjects\Contacts-Project-on-3-Tier-Architecture---Console-App\ContactsConsoleApp\obj\Debug\ContactsConsoleApp-PresentationLayer.csproj.AssemblyReference.cache
+C:\Users\SBS\Desktop\Programming Fundamentals course\myProjects\Contacts-Project-on-3-Tier-Architecture---Console-App\ContactsConsoleApp\obj\Debug\ContactsConsoleApp.exe.config
+C:\Users\SBS\Desktop\Programming Fundamentals course\myProjects\Contacts-Project-on-3-Tier-Architecture---Console-App\ContactsConsoleApp\obj\Debug\ContactsConsoleApp-PresentationLayer.csproj.CoreCompileInputs.cache
+C:\Users\SBS\Desktop\Programming Fundamentals course\myProjects\Contacts-Project-on-3-Tier-Architecture---Console-App\ContactsConsoleApp\obj\Debug\Contacts.BFD23B43.Up2Date
+C:\Users\SBS\Desktop\Programming Fundamentals course\myProjects\Contacts-Project-on-3-Tier-Architecture---Console-App\ContactsConsoleApp\obj\Debug\ContactsConsoleApp.exe
+C:\Users\SBS\Desktop\Programming Fundamentals course\myProjects\Contacts-Project-on-3-Tier-Architecture---Console-App\ContactsConsoleApp\obj\Debug\ContactsConsoleApp.pdb
