@@ -29,7 +29,7 @@ namespace ContactsConsoleApp
 
         static void Main(string[] args)
         {
-            FindContacts(1);
+            FindContacts(2);
         }
     }
 }
