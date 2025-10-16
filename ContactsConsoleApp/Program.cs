@@ -6,7 +6,7 @@ namespace ContactsConsoleApp
 {
     internal class Program
     {
-        static void FindContacts(int ID)
+        static void FindContact(int ID)
         {
             clsContact contact = clsContact.Find(ID);
 
@@ -27,9 +27,29 @@ namespace ContactsConsoleApp
             }
         }
 
+        static void AddNewContanct()
+        {
+            clsContact contact = new clsContact();
+
+            contact.FirstName = "Youssef";
+            contact.LastName = "El Hassani";
+            contact.Email = "Youssef@gmail.com";
+            contact.Phone = "0694384213";
+            contact.Address = "Hay sofia Marrakesh";
+            contact.DateOfBirth = new DateTime(2003, 3, 7);
+            contact.CountryID = 1;
+            contact.ImagePath = "";
+
+            if (contact.Save())
+            {
+                Console.WriteLine("Contact added successfully with ID = " + contact.ID);
+            }
+        }
+
         static void Main(string[] args)
         {
-            FindContacts(2);
+            //FindContact(2);
+            AddNewContanct();
         }
     }
 }
