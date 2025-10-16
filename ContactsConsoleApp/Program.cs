@@ -46,10 +46,37 @@ namespace ContactsConsoleApp
             }
         }
 
+        static void UpdateContact(int ID)
+        {
+            clsContact contact = clsContact.Find(ID);
+
+            if (contact != null)
+            {
+                contact.FirstName = "Samira";
+                contact.LastName = "El Fadil";
+                contact.Email = "Samira@gmail.com";
+                contact.Phone = "0687546321";
+                contact.Address = "Sidi Mbarek Marrakesh";
+                contact.DateOfBirth = new DateTime(1978, 1, 1);
+                contact.CountryID = 2;
+                contact.ImagePath = "";
+
+                if (contact.Save())
+                {
+                    Console.WriteLine("Contact updated successfully.");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Failed to update contact.");
+            }
+        }
+
         static void Main(string[] args)
         {
             //FindContact(2);
-            AddNewContanct();
+            //AddNewContanct();
+            UpdateContact(1);
         }
     }
 }

@@ -11,9 +11,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{2EA18897-84C3-4C2C-AF42-C9B5A6D3D60E}|ContactsConsoleApp-PresentationLayer.csproj|C:\\Users\\SBS\\Desktop\\Programming Fundamentals course\\myProjects\\Contacts-Project-on-3-Tier-Architecture---Console-App\\ContactsConsoleApp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2EA18897-84C3-4C2C-AF42-C9B5A6D3D60E}|ContactsConsoleApp-PresentationLayer.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EBCCAB46-D732-49BD-ADE3-68AC62344B45}|..\\ContactsDataAccessLayer\\ContactsDataAccessLayer.csproj|c:\\users\\sbs\\desktop\\programming fundamentals course\\myprojects\\contacts-project-on-3-tier-architecture---console-app\\contactsdataaccesslayer\\clscontactsdataaccesssettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,15 +24,15 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "clsContactsDataAccessSettings.cs",
-              "DocumentMoniker": "C:\\Users\\SBS\\Desktop\\Programming Fundamentals course\\myProjects\\Contacts-Project-on-3-Tier-Architecture---Console-App\\ContactsDataAccessLayer\\clsContactsDataAccessSettings.cs",
-              "RelativeDocumentMoniker": "..\\ContactsDataAccessLayer\\clsContactsDataAccessSettings.cs",
-              "ToolTip": "C:\\Users\\SBS\\Desktop\\Programming Fundamentals course\\myProjects\\Contacts-Project-on-3-Tier-Architecture---Console-App\\ContactsDataAccessLayer\\clsContactsDataAccessSettings.cs",
-              "RelativeToolTip": "..\\ContactsDataAccessLayer\\clsContactsDataAccessSettings.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\SBS\\Desktop\\Programming Fundamentals course\\myProjects\\Contacts-Project-on-3-Tier-Architecture---Console-App\\ContactsConsoleApp\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\SBS\\Desktop\\Programming Fundamentals course\\myProjects\\Contacts-Project-on-3-Tier-Architecture---Console-App\\ContactsConsoleApp\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAgwDAAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-15T21:52:13.79Z",
+              "WhenOpened": "2025-10-14T20:24:35.29Z",
               "EditorCaption": ""
             },
             {
@@ -46,9 +43,9 @@
               "RelativeDocumentMoniker": "..\\ContactsDataAccessLayer\\clsContactDataAccess.cs",
               "ToolTip": "C:\\Users\\SBS\\Desktop\\Programming Fundamentals course\\myProjects\\Contacts-Project-on-3-Tier-Architecture---Console-App\\ContactsDataAccessLayer\\clsContactDataAccess.cs",
               "RelativeToolTip": "..\\ContactsDataAccessLayer\\clsContactDataAccess.cs",
-              "ViewState": "AgIAAE0AAAAAAAAAAAAjwFIAAABiAAAAAAAAAA==",
+              "ViewState": "AgIAAGQAAAAAAAAAAAAgwI8AAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-15T21:50:26.861Z",
+              "WhenOpened": "2025-10-16T14:56:29.931Z",
               "EditorCaption": ""
             },
             {
@@ -59,22 +56,9 @@
               "RelativeDocumentMoniker": "..\\ContactsBusinessLayer\\clsContacts.cs",
               "ToolTip": "C:\\Users\\SBS\\Desktop\\Programming Fundamentals course\\myProjects\\Contacts-Project-on-3-Tier-Architecture---Console-App\\ContactsBusinessLayer\\clsContacts.cs",
               "RelativeToolTip": "..\\ContactsBusinessLayer\\clsContacts.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAIA0wDcAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAACUAAAAAAAAAAAAIwDYAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-15T14:58:04.094Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\SBS\\Desktop\\Programming Fundamentals course\\myProjects\\Contacts-Project-on-3-Tier-Architecture---Console-App\\ContactsConsoleApp\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\SBS\\Desktop\\Programming Fundamentals course\\myProjects\\Contacts-Project-on-3-Tier-Architecture---Console-App\\ContactsConsoleApp\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAYwCoAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-14T20:24:35.29Z",
               "EditorCaption": ""
             }
           ]

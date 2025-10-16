@@ -57,6 +57,13 @@ namespace ContactsBusinessLayer
             return this.ID != -1;
         }
 
+        private bool _UpdateContact()
+        {
+            // Call data access layer
+            return clsContactDataAccess.UpdateContact(this.ID, this.FirstName, this.LastName, this.Email, this.Phone, this.Address,
+                                                      this.DateOfBirth, this.CountryID, this.ImagePath);
+        }
+
         public static clsContact Find(int ID)
         {
             string FirstName = "", LastName = "", Email = "", Phone = "", Address = "", ImagePath = "";
@@ -88,6 +95,8 @@ namespace ContactsBusinessLayer
                     {
                         return false;
                     }
+                case enMode.Update:
+                    return _UpdateContact();
             }
             return false;
         }

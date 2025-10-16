@@ -11,6 +11,18 @@ namespace ContactsDataAccessLayer
         //    return reader[column] == DBNull.Value ? "Null" : (string)reader[column];
         //}
 
+        private static void AddParameterOrDbNull(ref SqlCommand command, string parameterName, object value)
+        {
+            if (value != null & value.ToString() != "")
+            {
+                command.Parameters.AddWithValue(parameterName, value);
+            }
+            else
+            {
+                command.Parameters.AddWithValue(parameterName, DBNull.Value);
+            }
+        }
+
         public static bool GetContactInfoByID(int ID, ref string FirstName, ref string LastName, ref string Email, ref string Phone, ref string Address,
                                                 ref DateTime DateOfBirth, ref int CountryID, ref string ImagePath)
         {
@@ -93,14 +105,7 @@ namespace ContactsDataAccessLayer
             command.Parameters.AddWithValue("@DataOfBirth", DateOfBirth);
             command.Parameters.AddWithValue("@CountryID", CountryID);
 
-            if (ImagePath != "")
-            {
-                command.Parameters.AddWithValue("@ImagePath", ImagePath);
-            }
-            else
-            {
-                command.Parameters.AddWithValue("@ImagePath", System.DBNull.Value);
-            }
+            AddParameterOrDbNull(ref command, "ImagePath", ImagePath);
 
             try
             {
@@ -123,6 +128,53 @@ namespace ContactsDataAccessLayer
             }
 
             return contactID;
+        }
+
+        public static bool UpdateContact(int ID, string FirstName, string LastName, string Email, string Phone, string Address, DateTime DateOfBirth,
+                                        int CountryID, string ImagePath)
+        {
+            int rowsAffected = 0;
+            SqlConnection connection = new SqlConnection(clsContactsDataAccessSettings.connectionString);
+
+            string query = @"update Contacts
+                             set FirstName   = @FirstName,
+                                 LastName    = @LastName,
+                                 Email       = @Email,
+                                 Phone       = @Phone,
+                                 Address     = @Address,
+                                 DateOfBirth = @DateOfBirth,
+                                 CountryID   = @CountryID,
+                                 ImagePath   = @ImagePath
+                             where ContactID = @ContactID;";
+
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@ContactID", ID);
+            command.Parameters.AddWithValue("@FirstName", FirstName);
+            command.Parameters.AddWithValue("@LastName", LastName);
+            command.Parameters.AddWithValue("@Email", Email);
+            command.Parameters.AddWithValue("@Phone", Phone);
+            command.Parameters.AddWithValue("@Address", Address);
+            command.Parameters.AddWithValue("@DateOfBirth", DateOfBirth);
+            command.Parameters.AddWithValue("@CountryID", CountryID);
+            AddParameterOrDbNull(ref command, "ImagePath", ImagePath);
+
+
+            try
+            {
+                connection.Open();
+
+                rowsAffected = command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return rowsAffected > 0;
         }
     }
 }
