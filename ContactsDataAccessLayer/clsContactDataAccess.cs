@@ -176,5 +176,34 @@ namespace ContactsDataAccessLayer
 
             return rowsAffected > 0;
         }
+
+        public static bool DeleteContact(int ID)
+        {
+            int rowsAffected = 0;
+            SqlConnection connection = new SqlConnection(clsContactsDataAccessSettings.connectionString);
+
+            string query = @"delete from Contacts
+                             where ContactID = @ID";
+
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@ID", ID);
+
+            try
+            {
+                connection.Open();
+
+                rowsAffected = command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return rowsAffected > 0;
+        }
     }
 }
