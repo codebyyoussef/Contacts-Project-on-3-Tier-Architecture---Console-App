@@ -84,12 +84,25 @@ namespace ContactsConsoleApp
             }
         }
 
+        static void ListContacts()
+        {
+            DataTable dataTable = clsContact.GetAllContacts();
+
+            Console.WriteLine("Contacts Data:");
+
+            foreach (DataRow row in dataTable.Rows)
+            {
+                Console.WriteLine($"{row["ContactID"]}, {row["FirstName"]}, {row["LastName"]}, {row["Phone"]}");
+            }
+        }
+
         static void Main(string[] args)
         {
             //FindContact(2);
             //AddNewContanct();
             //UpdateContact(1);
-            DeleteContact(8);
+            //DeleteContact(8);
+            ListContacts();
         }
     }
 }

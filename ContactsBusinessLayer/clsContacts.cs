@@ -69,6 +69,11 @@ namespace ContactsBusinessLayer
             return clsContactDataAccess.DeleteContact(ID);
         }
 
+        public static DataTable GetAllContacts()
+        {
+            return clsContactDataAccess.GetAllContacts();
+        }
+
         public static clsContact Find(int ID)
         {
             string FirstName = "", LastName = "", Email = "", Phone = "", Address = "", ImagePath = "";
