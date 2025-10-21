@@ -74,13 +74,20 @@ namespace ContactsConsoleApp
 
         static void DeleteContact(int ID)
         {
-            if (clsContact.DeleteContact(ID))
+            if (clsContact.IsContactExist(ID))
             {
-                Console.WriteLine("Contact deleted Successfully.");
+                if (clsContact.DeleteContact(ID))
+                {
+                    Console.WriteLine("Contact deleted Successfully.");
+                }
+                else
+                {
+                    Console.WriteLine("Failed to delete contact.");
+                }
             }
             else
             {
-                Console.WriteLine("Failed to delete contact.");
+                Console.WriteLine("The contact with ID = " + ID + " is not exist.");
             }
         }
 
@@ -96,13 +103,26 @@ namespace ContactsConsoleApp
             }
         }
 
+        static void IsContactExist(int ID)
+        {
+            if (clsContact.IsContactExist(ID))
+            {
+                Console.WriteLine("Yes, contact is exist.");
+            }
+            else
+            {
+                Console.WriteLine("No, contact is not exist.");
+            }
+        }
+
         static void Main(string[] args)
         {
             //FindContact(2);
             //AddNewContanct();
             //UpdateContact(1);
             //DeleteContact(8);
-            ListContacts();
+            //ListContacts();
+            IsContactExist(1);
         }
     }
 }

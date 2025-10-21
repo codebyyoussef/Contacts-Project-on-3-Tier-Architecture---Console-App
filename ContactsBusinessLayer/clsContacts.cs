@@ -1,6 +1,7 @@
-﻿using System;
+﻿using ContactsDataAccessLayer;
+using System;
 using System.Data;
-using ContactsDataAccessLayer;
+using System.Data.SqlClient;
 
 namespace ContactsBusinessLayer
 {
@@ -89,6 +90,11 @@ namespace ContactsBusinessLayer
             {
                 return null;
             }
+        }
+
+        public static bool IsContactExist(int ID)
+        {
+            return clsContactDataAccess.IsContactExist(ID);
         }
 
         public bool Save()
