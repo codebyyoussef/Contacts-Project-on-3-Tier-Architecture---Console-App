@@ -30,7 +30,7 @@ This is a console-based Contacts Management application built using **3-Tier Arc
 - Scalable and easy to extend  
 
 ## How to Use
-1. Clone the repository: git clone <repository-url>
+1. Clone the repository: git clone <repository-url> Or Download the ContactsSolution.rar
 2. Restore the database:
 If you’re using **SQL Server Management Studio (SSMS)**, you can restore the database in two ways:  
 ### Option 1: Using SSMS (GUI)
