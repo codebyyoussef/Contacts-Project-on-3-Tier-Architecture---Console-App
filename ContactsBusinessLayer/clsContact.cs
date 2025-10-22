@@ -1,7 +1,7 @@
-﻿using ContactsDataAccessLayer;
-using System;
+﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using ContactsDataAccessLayer;
 
 namespace ContactsBusinessLayer
 {
@@ -54,25 +54,25 @@ namespace ContactsBusinessLayer
         private bool _AddNewContact()
         {
             // Call Data Access Layer
-            this.ID = clsContactDataAccess.AddNewContact(this.FirstName, this.LastName, this.Email, this.Phone, this.Address, this.DateOfBirth, this.CountryID, this.ImagePath);
+            this.ID = clsContactData.AddNewContact(this.FirstName, this.LastName, this.Email, this.Phone, this.Address, this.DateOfBirth, this.CountryID, this.ImagePath);
             return this.ID != -1;
         }
 
         private bool _UpdateContact()
         {
             // Call data access layer
-            return clsContactDataAccess.UpdateContact(this.ID, this.FirstName, this.LastName, this.Email, this.Phone, this.Address,
+            return clsContactData.UpdateContact(this.ID, this.FirstName, this.LastName, this.Email, this.Phone, this.Address,
                                                       this.DateOfBirth, this.CountryID, this.ImagePath);
         }
 
         static public bool DeleteContact(int ID)
         {
-            return clsContactDataAccess.DeleteContact(ID);
+            return clsContactData.DeleteContact(ID);
         }
 
         public static DataTable GetAllContacts()
         {
-            return clsContactDataAccess.GetAllContacts();
+            return clsContactData.GetAllContacts();
         }
 
         public static clsContact Find(int ID)
@@ -81,7 +81,7 @@ namespace ContactsBusinessLayer
             DateTime DateOfBirth = DateTime.Now;
             int CountryID = 1;
 
-            if (clsContactDataAccess.GetContactInfoByID(ID, ref FirstName, ref LastName, ref Email, ref Phone, ref Address,
+            if (clsContactData.GetContactInfoByID(ID, ref FirstName, ref LastName, ref Email, ref Phone, ref Address,
                                                 ref DateOfBirth,  ref CountryID, ref ImagePath))
             {
                 return new clsContact(ID, FirstName, LastName, Email, Phone, Address, DateOfBirth, CountryID, ImagePath);
@@ -94,7 +94,7 @@ namespace ContactsBusinessLayer
 
         public static bool IsContactExist(int ID)
         {
-            return clsContactDataAccess.IsContactExist(ID);
+            return clsContactData.IsContactExist(ID);
         }
 
         public bool Save()
@@ -115,6 +115,8 @@ namespace ContactsBusinessLayer
                     return _UpdateContact();
             }
             return false;
-        }
+        } 
     }
+
+   
 }

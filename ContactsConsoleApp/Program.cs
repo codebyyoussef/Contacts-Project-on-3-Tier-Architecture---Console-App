@@ -6,7 +6,7 @@ namespace ContactsConsoleApp
 {
     internal class Program
     {
-        static void FindContact(int ID)
+        static void testFindContact(int ID)
         {
             clsContact contact = clsContact.Find(ID);
 
@@ -27,7 +27,7 @@ namespace ContactsConsoleApp
             }
         }
 
-        static void AddNewContanct()
+        static void testAddNewContanct()
         {
             clsContact contact = new clsContact();
 
@@ -46,7 +46,7 @@ namespace ContactsConsoleApp
             }
         }
 
-        static void UpdateContact(int ID)
+        static void testUpdateContact(int ID)
         {
             clsContact contact = clsContact.Find(ID);
 
@@ -72,7 +72,7 @@ namespace ContactsConsoleApp
             }
         }
 
-        static void DeleteContact(int ID)
+        static void testDeleteContact(int ID)
         {
             if (clsContact.IsContactExist(ID))
             {
@@ -91,7 +91,7 @@ namespace ContactsConsoleApp
             }
         }
 
-        static void ListContacts()
+        static void testListContacts()
         {
             DataTable dataTable = clsContact.GetAllContacts();
 
@@ -103,7 +103,7 @@ namespace ContactsConsoleApp
             }
         }
 
-        static void IsContactExist(int ID)
+        static void testIsContactExist(int ID)
         {
             if (clsContact.IsContactExist(ID))
             {
@@ -115,14 +115,153 @@ namespace ContactsConsoleApp
             }
         }
 
+        //---Test Country Business
+
+        static void testFindCountryByID(int ID)
+        {
+            clsCountry country = clsCountry.Find(ID);
+
+            if (country != null)
+            {
+                Console.WriteLine($"CountryID: {country.ID}");
+                Console.WriteLine($"CountryName: {country.Name}");
+            }
+            else
+            {
+                Console.WriteLine("Country with ID = " + ID + " not found!");
+            }
+        }
+
+        static void testFindCountryByName(string countryName)
+        {
+            clsCountry country = clsCountry.Find(countryName);
+
+            if (country != null)
+            {
+                Console.WriteLine($"CountryID: {country.ID}");
+                Console.WriteLine($"CountryName: {country.Name}");
+            }
+            else
+            {
+                Console.WriteLine("Invalid country name. Ensure it exists in the database before proceeding.");
+            }
+        }
+
+        static void testAddNewCountry(string countryName)
+        {
+            clsCountry country = new clsCountry();
+
+            country.Name = countryName;
+
+            if (country.Save())
+            {
+                Console.WriteLine("Country added successfully.");
+            }
+            else
+            {
+                Console.WriteLine("Failed to add country. Please try again.");
+            }
+        }
+
+        static void testUpdateCountry(int ID)
+        {
+            clsCountry country = clsCountry.Find(ID);
+
+            if (country != null)
+            {
+                // Update whatever info you want
+                country.Name = "Morocco";
+
+                if (country.Save())
+                {
+                    Console.WriteLine("Country information updated successfully.");
+                }
+                else
+                {
+                    Console.WriteLine("Failed to update country. Please try again.");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Update failed, country not found in the database.");
+            }
+        }
+
+        static void testDeleteCountry(int ID)
+        {
+            if (clsCountry.IsCountryExsit(ID))
+            {
+                if (clsCountry.DeleteCountry(ID))
+                {
+                    Console.WriteLine("Country deleted Successfully.");
+                }
+                else
+                {
+                    Console.WriteLine("Failed to delete country.");
+                }
+            }
+            else
+            {
+                Console.WriteLine("No, country is not exist.");
+            }
+            
+        }
+       
+        static void testListCountries()
+        {
+            DataTable dataTable = clsCountry.GetAllCountries();
+
+            Console.WriteLine("Countries List:");
+
+            foreach (DataRow row in dataTable.Rows)
+            {
+                Console.WriteLine($"{row["CountryID"]}, {row["CountryName"]}");
+            }
+        }
+
+        static void testIsCountryExistByID(int ID)
+        {
+            if (clsCountry.IsCountryExsit(ID))
+            {
+                Console.WriteLine("Yes, country is exist.");
+            }
+            else
+            {
+                Console.WriteLine("No, country is not exist.");
+            }
+        }
+
+        static void testIsCountryExistByName(string countryName)
+        {
+            if (clsCountry.IsCountryExsit(countryName))
+            {
+                Console.WriteLine("Yes, country is exist.");
+            }
+            else
+            {
+                Console.WriteLine("No, country is not exist.");
+            }
+        }
+
         static void Main(string[] args)
         {
-            //FindContact(2);
-            //AddNewContanct();
-            //UpdateContact(1);
-            //DeleteContact(8);
-            //ListContacts();
-            IsContactExist(1);
+            //testFindContact(2);
+            //testAddNewContanct();
+            //testUpdateContact(1);
+            //testDeleteContact(8);
+            //testListContacts();
+            //testIsContactExist(1);
+
+            //testFindCountryByID(1);
+            //testFindCountryByName("Germany");
+            //testAddNewCountry("Morocco");
+            //testUpdateCountry(6);
+            //testDeleteCountry(7);
+            //testListCountries();
+            testIsCountryExistByID(1);
+            testIsCountryExistByName("Canada");
+
+
         }
     }
 }

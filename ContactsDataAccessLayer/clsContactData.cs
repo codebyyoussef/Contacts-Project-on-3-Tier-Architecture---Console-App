@@ -4,7 +4,7 @@ using System.Data.SqlClient;
 
 namespace ContactsDataAccessLayer
 {
-    public class clsContactDataAccess
+    public class clsContactData
     {
         //private static string GetStringOrNull(SqlDataReader reader, string column)
         //{
@@ -273,5 +273,6 @@ namespace ContactsDataAccessLayer
             return isFound;
         }
 
+       
     }
 }
