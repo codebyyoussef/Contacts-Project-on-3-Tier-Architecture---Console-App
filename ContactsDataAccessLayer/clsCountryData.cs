@@ -7,7 +7,24 @@ namespace ContactsDataAccessLayer
 {
     public class clsCountryData
     {
-        public static bool GetCountryInfoByID(int ID, ref string countryName)
+        private static string _GetStringOrNull(SqlDataReader reader, string column)
+        {
+            return reader[column] == DBNull.Value ? "Null" : (string)reader[column];
+        }
+
+        private static void _AddParameterOrDbNull(ref SqlCommand command, string parameterName, object value)
+        {
+            if (value != null & value.ToString() != "")
+            {
+                command.Parameters.AddWithValue(parameterName, value);
+            }
+            else
+            {
+                command.Parameters.AddWithValue(parameterName, DBNull.Value);
+            }
+        }
+
+        public static bool GetCountryInfoByID(int ID, ref string countryName, ref string code, ref string phoneCode)
         {
             bool isFound = false;
 
@@ -28,6 +45,8 @@ namespace ContactsDataAccessLayer
                 {
                     isFound = true;
                     countryName = (string)reader["CountryName"];
+                    code = _GetStringOrNull(reader, "Code");
+                    phoneCode = _GetStringOrNull(reader, "PhoneCode");
                 }
                 else
                 {
@@ -48,7 +67,7 @@ namespace ContactsDataAccessLayer
             return isFound;
         }
 
-        public static bool GetCountryInfoByName(string countryName, ref int ID)
+        public static bool GetCountryInfoByName(string countryName, ref int ID, ref string code, ref string phoneCode)
         {
             bool isFound = false;
 
@@ -69,6 +88,9 @@ namespace ContactsDataAccessLayer
                 {
                     isFound = true;
                     ID = (int)reader["CountryID"];
+                    countryName = (string)reader["CountryName"];
+                    code = _GetStringOrNull(reader, "Code");
+                    phoneCode = _GetStringOrNull(reader, "PhoneCode");
                 }
                 else
                 {
@@ -89,16 +111,18 @@ namespace ContactsDataAccessLayer
             return isFound;
         }
 
-        public static int AddNewCountry(string countryName)
+        public static int AddNewCountry(string countryName, string code, string phoneCode)
         {
             int countryID = -1;
             SqlConnection connection = new SqlConnection(clsContactsDataAccessSettings.connectionString);
 
-            string query = @"insert into Countries (CountryName)
-                             values (@CountryName);
+            string query = @"insert into Countries (CountryName, Code, PhoneCode)
+                             values (@CountryName, @Code, @PhoneCode);
                              select SCOPE_IDENTITY();";
             SqlCommand command = new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@CountryName", countryName);
+            _AddParameterOrDbNull(ref command, "@Code", code);
+            _AddParameterOrDbNull(ref command, "@PhoneCode", phoneCode);
 
             try
             {
@@ -123,18 +147,23 @@ namespace ContactsDataAccessLayer
             return countryID;
         }
 
-        public static bool UpdateCountry(int ID, string countryName)
+        public static bool UpdateCountry(int ID, string countryName, string code, string phoneCode)
         {
             int rowsAffected = 0;
             SqlConnection connection = new SqlConnection(clsContactsDataAccessSettings.connectionString);
 
             string query = @"update Countries
-                             set CountryName = @countryName
+                             set CountryName = @CountryName,
+                                 Code = @Code,
+                                 PhoneCode = @PhoneCode
                              where CountryID = @CountryID";
 
             SqlCommand command = new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@CountryID", ID);
             command.Parameters.AddWithValue("@CountryName", countryName);
+            _AddParameterOrDbNull(ref command, "@Code", code);
+            _AddParameterOrDbNull(ref command, "@PhoneCode", phoneCode);
+
 
             try
             {

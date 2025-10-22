@@ -12,28 +12,34 @@ namespace ContactsBusinessLayer
 
         public int ID { get; set; }
         public string Name { get; set; }
+        public string Code { get; set; }
+        public string PhoneCode { get; set; }
 
         public clsCountry()
         {
             ID = -1;
             Name = "";
+            Code = "";
+            PhoneCode = "";
             Mode = enMode.AddNew;
         }
 
-        private clsCountry(int ID, string Name)
+        private clsCountry(int ID, string Name, string Code, string PhoneCode)
         {
             this.ID = ID;
             this.Name = Name;
+            this.Code = Code;
+            this.PhoneCode = PhoneCode;
             Mode = enMode.Update;
         }
 
         public static clsCountry Find(int ID)
         {
-            string countryName = "";
+            string countryName = "", code = "", phoneCode = "";
 
-            if (clsCountryData.GetCountryInfoByID(ID, ref countryName))
+            if (clsCountryData.GetCountryInfoByID(ID, ref countryName, ref code, ref phoneCode))
             {
-                return new clsCountry(ID, countryName);
+                return new clsCountry(ID, countryName, code, phoneCode);
             }
             else
             {
@@ -41,12 +47,13 @@ namespace ContactsBusinessLayer
             }
         }
 
-        public static clsCountry Find(string CountryName)
+        public static clsCountry Find(string countryName)
         {
             int ID = -1;
-            if (clsCountryData.GetCountryInfoByName(CountryName, ref ID))
+            string code = "", phoneCode = "";
+            if (clsCountryData.GetCountryInfoByName(countryName, ref ID, ref code, ref phoneCode))
             {
-                return new clsCountry(ID, CountryName);
+                return new clsCountry(ID, countryName, code, phoneCode);
             }
             else
             {
@@ -56,13 +63,13 @@ namespace ContactsBusinessLayer
 
         private bool _AddNewCountry()
         {
-            this.ID = clsCountryData.AddNewCountry(this.Name);
+            this.ID = clsCountryData.AddNewCountry(this.Name, this.Code, this.PhoneCode);
             return this.ID != -1;
         }
 
         private bool _UpdateCountry()
         {
-            return clsCountryData.UpdateCountry(this.ID, this.Name);
+            return clsCountryData.UpdateCountry(this.ID, this.Name, this.Code, this.PhoneCode);
         }
 
         public static bool DeleteCountry(int ID)

@@ -125,6 +125,9 @@ namespace ContactsConsoleApp
             {
                 Console.WriteLine($"CountryID: {country.ID}");
                 Console.WriteLine($"CountryName: {country.Name}");
+                Console.WriteLine($"Code: {country.Code}");
+                Console.WriteLine($"PhoneCode: {country.PhoneCode}");
+
             }
             else
             {
@@ -140,6 +143,8 @@ namespace ContactsConsoleApp
             {
                 Console.WriteLine($"CountryID: {country.ID}");
                 Console.WriteLine($"CountryName: {country.Name}");
+                Console.WriteLine($"Code: {country.Code}");
+                Console.WriteLine($"PhoneCode: {country.PhoneCode}");
             }
             else
             {
@@ -147,11 +152,13 @@ namespace ContactsConsoleApp
             }
         }
 
-        static void testAddNewCountry(string countryName)
+        static void testAddNewCountry()
         {
             clsCountry country = new clsCountry();
 
-            country.Name = countryName;
+            country.Name = "Morroco";
+            country.Code = "MAR";
+            country.PhoneCode = "+212";
 
             if (country.Save())
             {
@@ -170,7 +177,8 @@ namespace ContactsConsoleApp
             if (country != null)
             {
                 // Update whatever info you want
-                country.Name = "Morocco";
+                country.Code = "CAN";
+                country.PhoneCode = "+1";
 
                 if (country.Save())
                 {
@@ -215,7 +223,7 @@ namespace ContactsConsoleApp
 
             foreach (DataRow row in dataTable.Rows)
             {
-                Console.WriteLine($"{row["CountryID"]}, {row["CountryName"]}");
+                Console.WriteLine($"{row["CountryID"]}, {row["CountryName"]}, {row["Code"]}, {row["PhoneCode"]}");
             }
         }
 
@@ -251,15 +259,14 @@ namespace ContactsConsoleApp
             //testDeleteContact(8);
             //testListContacts();
             //testIsContactExist(1);
-
             //testFindCountryByID(1);
             //testFindCountryByName("Germany");
-            //testAddNewCountry("Morocco");
-            //testUpdateCountry(6);
+            //testAddNewCountry();
+            //testUpdateCountry(3);
             //testDeleteCountry(7);
             //testListCountries();
-            testIsCountryExistByID(1);
-            testIsCountryExistByName("Canada");
+            //testIsCountryExistByID(1);
+            //testIsCountryExistByName("Canada");
 
 
         }
